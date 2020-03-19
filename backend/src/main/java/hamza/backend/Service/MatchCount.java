@@ -12,7 +12,7 @@ public class MatchCount {
     public int CountMatch(String Input) {
         int count = 0;
         if (Input == "") {
-            return  count;
+             return  count;
         }
         //pattern object to compile regular expression
         Pattern p = Pattern.compile(RegExp);
@@ -21,6 +21,7 @@ public class MatchCount {
         while (m.find()) {
             count++;
         }
+
 
         return count;
 
