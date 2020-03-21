@@ -21,17 +21,6 @@ class PageComponent extends Component {
         l.push(item)
         this.setState({ ListItems: l })
 
-        // l.forEach((element, index) => {
-
-        //     console.log(element.text + "    l " + index)
-
-        // })
-        // //////////////////////////////////////////
-        // this.state.ListItems.forEach((element, index) => {
-
-        //     console.log(element.text + "its index " + index)
-
-        // })
     }
 
 
@@ -40,7 +29,7 @@ class PageComponent extends Component {
         return (
             <React.Fragment>
                 <InputComponent handleSubmit={this.addTextTolist} />
-                {
+                {//show items in a reversed order
                     this.state.ListItems.reverse().map((element, index) => {
 
                         return <DisplayTextComponent key={index} text={element.text} numberOfMatches={element.numberOfMatches}></DisplayTextComponent>

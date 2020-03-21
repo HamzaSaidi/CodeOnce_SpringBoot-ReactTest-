@@ -3,6 +3,8 @@ import { FormGroup, Alert, Input, Jumbotron, Button, Form } from 'reactstrap'
 import Axios from 'axios';
 
 class InputComponent extends Component {
+   
+   
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +13,7 @@ class InputComponent extends Component {
         }
 
     }
+
     handleSubmit = (e) => {
 
         e.preventDefault();
@@ -18,14 +21,19 @@ class InputComponent extends Component {
 
         var item = {}
         let text = this.state.input
+        //set the alert state depending on the input
         this.toggle(text)
 
+
+        //avoid sending request with empty body
         if (text.length != 0 && text.replace(/\s/gi, "").length != 0) {
 
+            //asynchronous post request to the server 
             Axios.post("http://localhost:8080/api/count", text, { headers: { "Content-Type": "text/plain" } }).then((response) => {
-                //number=parseInt(response.data)
                 item.text = this.state.input
                 item.numberOfMatches = response.data
+
+                //enable page component to access posted text 
 
                 this.props.handleSubmit(item)
 
@@ -34,9 +42,6 @@ class InputComponent extends Component {
 
     }
 
-
-
-    //enable page component to access posted text 
 
 
     toggle = (input) => {

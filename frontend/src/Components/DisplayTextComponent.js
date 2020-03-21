@@ -4,20 +4,24 @@ import reactStringReplace from 'react-string-replace'
 function DisplayTextComponent(props) {
 
 
-
+//color matched characters of input Text
   function colorMatchedCharacters() {
 
-    let regex=new RegExp('(\\.|\!|\\?|\\;|\\:|\\,)',"gi")
-    let arr=props.text.split(regex)
-let colored=arr.map((element,i)=>{
-if (regex.test(element)) {
-  return      <span key={i} style={{ backgroundColor: 'red' }}> {element } </span>
+    let regex = new RegExp('(\\.|\!|\\?|\\;|\\:|\\,)', "gi")
+ 
+    let arr = props.text.split(regex)
+  
+    let colored = arr.map((element, i) => {
+     
+      if (regex.test(element)) {
+      
+        return <span key={i} style={{ backgroundColor: 'red' }}> {element} </span>
 
-}
-else return element
-})
-     return colored
-}
+      }
+      else return element
+    })
+    return colored
+  }
 
   return (
 
