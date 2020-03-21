@@ -3,11 +3,8 @@ import { FormGroup, Alert, Input, Jumbotron, Button, Form } from 'reactstrap'
 import Axios from 'axios';
 
 class InputComponent extends Component {
-<<<<<<< HEAD
 
 
-=======
->>>>>>> parent of 0ca507c... useful comments
     constructor(props) {
         super(props);
         this.state = {
@@ -25,13 +22,9 @@ class InputComponent extends Component {
         let text = this.state.input
         this.toggle(text)
 
-<<<<<<< HEAD
 
         //avoid sending request with empty body
         if (text.length !== 0 && text.replace(/\s/gi, "").length !== 0) {
-=======
-        if (text.length != 0 && text.replace(/\s/gi, "").length != 0) {
->>>>>>> parent of 0ca507c... useful comments
 
             Axios.post("http://localhost:8080/api/count", text, { headers: { "Content-Type": "text/plain" } }).then((response) => {
                 //number=parseInt(response.data)

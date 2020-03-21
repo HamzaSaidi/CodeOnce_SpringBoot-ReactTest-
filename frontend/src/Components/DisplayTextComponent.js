@@ -6,7 +6,6 @@ import { Badge } from 'reactstrap';
 
   function colorMatchedCharacters() {
 
-<<<<<<< HEAD
     let regex = new RegExp('(\\.|!|\\?|\\;|\\:|\\,)', "gi")
  
     let arr = props.text.split(regex)
@@ -22,19 +21,6 @@ import { Badge } from 'reactstrap';
     })
     return colored
   }
-=======
-    let regex=new RegExp('(\\.|\!|\\?|\\;|\\:|\\,)',"gi")
-    let arr=props.text.split(regex)
-let colored=arr.map((element,i)=>{
-if (regex.test(element)) {
-  return      <span key={i} style={{ backgroundColor: 'red' }}> {element } </span>
-
-}
-else return element
-})
-     return colored
-}
->>>>>>> parent of 0ca507c... useful comments
 
   return (
 
