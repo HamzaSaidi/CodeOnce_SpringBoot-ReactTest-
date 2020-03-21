@@ -1,13 +1,12 @@
 import React from 'react';
 import { Badge } from 'reactstrap';
-import reactStringReplace from 'react-string-replace'
-function DisplayTextComponent(props) {
+ function DisplayTextComponent(props) {
 
 
 //color matched characters of input Text
   function colorMatchedCharacters() {
 
-    let regex = new RegExp('(\\.|\!|\\?|\\;|\\:|\\,)', "gi")
+    let regex = new RegExp('(\\.|!|\\?|\\;|\\:|\\,)', "gi")
  
     let arr = props.text.split(regex)
   
@@ -15,7 +14,7 @@ function DisplayTextComponent(props) {
      
       if (regex.test(element)) {
       
-        return <span key={i} style={{ backgroundColor: 'red' }}> {element} </span>
+        return <span key={i} style={{ color: 'red' ,fontSize:15}}> {element} </span>
 
       }
       else return element

@@ -3,8 +3,8 @@ import { FormGroup, Alert, Input, Jumbotron, Button, Form } from 'reactstrap'
 import Axios from 'axios';
 
 class InputComponent extends Component {
-   
-   
+
+
     constructor(props) {
         super(props);
         this.state = {
@@ -26,7 +26,7 @@ class InputComponent extends Component {
 
 
         //avoid sending request with empty body
-        if (text.length != 0 && text.replace(/\s/gi, "").length != 0) {
+        if (text.length !== 0 && text.replace(/\s/gi, "").length !== 0) {
 
             //asynchronous post request to the server 
             Axios.post("http://localhost:8080/api/count", text, { headers: { "Content-Type": "text/plain" } }).then((response) => {
@@ -46,7 +46,7 @@ class InputComponent extends Component {
 
     toggle = (input) => {
 
-        if (input.length == 0 || input.replace(/\s/gi, "").length == 0) {
+        if (input.length === 0 || input.replace(/\s/gi, "").length === 0) {
             this.setState({ alert: true })
 
         }
@@ -65,10 +65,7 @@ class InputComponent extends Component {
 
     render() {
         return <div>
-            <Jumbotron fluid>
 
-                <h1 className="display-3">Count Special caracters on your Text</h1>
-            </Jumbotron>
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
                     <Input type="textarea" onChange={this.handleChange} style={{ height: 150, width: "60%" }} className="input-sm" name="text" id="exampleText" placeholder="write your text here" />
