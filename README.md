@@ -1,7 +1,10 @@
 ##                                APP DESCRIPTION
+
+
 * back-end
 
-...
+```
+
 back-end/
     └── src/
         ├── main/
@@ -19,11 +22,11 @@ back-end/
                               └── ServiceTests/  this folder contains the service's unit test matchCount
 
 
-...
+```
 
 
-*front-end
-...
+* front-end
+```
 front-end/
      └── src/
          └── Componentes/
@@ -34,7 +37,7 @@ front-end/
                        └──PageComponent.js    //parent component for input and display
 
 
-...
+```
 
 
 
