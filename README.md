@@ -1,4 +1,4 @@
-## to run the app 
+##                      TO RUN THE APP ON YOUR LOCAL MACHINE
 
 
 
@@ -8,7 +8,7 @@
 
 
 
-*clone this project 
+* clone this project 
 
 
 ```
