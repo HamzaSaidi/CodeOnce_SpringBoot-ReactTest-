@@ -17,7 +17,6 @@ class InputComponent extends Component {
 
         e.preventDefault();
         console.log(this.state.input + " this is the input")
-
         var item = {}
         let text = this.state.input
         this.toggle(text)
@@ -30,6 +29,7 @@ class InputComponent extends Component {
                 //number=parseInt(response.data)
                 item.text = this.state.input
                 item.numberOfMatches = response.data
+                this.setState({input:""})
 
                 this.props.handleSubmit(item)
 
@@ -67,7 +67,7 @@ class InputComponent extends Component {
 
             <Form onSubmit={this.handleSubmit} >
                 <FormGroup>
-                    <Input type="textarea" onChange={this.handleChange} style={{ height: 150, width: "60%" }} className="input-sm" name="text" id="exampleText" placeholder="write your text here" />
+                    <Input type="textarea" onChange={this.handleChange} style={{ height: 150, width: "60%" }} className="input-sm" name="text" id="exampleText" placeholder="write your text here" value={this.state.input}/>
                     <Alert isOpen={this.state.alert}> you are submitting empty text </Alert>
                     <Button className="mt-10 float-left " type="submit" > Submit Text </Button>
                 </FormGroup>
