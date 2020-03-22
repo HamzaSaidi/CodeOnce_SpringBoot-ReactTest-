@@ -1,28 +1,27 @@
  
+ 
 version: '3'
 
-# Define services
+
 services:
-  # App backend service
+  #   backend service
   backend-server:
     # Configuration for building the docker image for the backend service
     build:
       
-      context: ./backend # Use an image built from the specified dockerfile in the `polling-app-server` directory.
-      
+      context: ./backend # Use an image built from  the docker file in Backend directory
       dockerfile: Dockerfile
       
     ports:
-       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+       - "8080:8080" # map the exposed port 8080 on the container to port 8080  
         
   # Frontend Service 
   frontend-server:
       build:
-         context: frontend # Use an image built from the specified dockerfile in the `polling-app-client` directory.
+         context: frontend # Use an image built from the docker file in frontend directory
          dockerfile: Dockerfile
       ports:
-        - "3000:3000" # Map the exposed port 80 on the container to port 9090 on the host machine
-   
+        - "3000:3000" # Map the exposed port 3000 on the container to port 3000 
     
       depends_on:
       - backend-server
