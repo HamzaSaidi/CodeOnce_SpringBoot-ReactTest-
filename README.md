@@ -65,6 +65,10 @@ front-end/
 docker-compose up
 ```
 
+*  if you encountered errors it's due to docker-compose caching make sure to run 
+```
+docker-compose rm -f
+```
 * In the web browser navigate to localhost:3000
 
 
