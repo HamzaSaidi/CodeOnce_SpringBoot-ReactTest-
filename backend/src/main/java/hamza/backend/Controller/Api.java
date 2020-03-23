@@ -16,7 +16,6 @@ public class Api {
     public ResponseEntity<Integer> CountMatch(@RequestBody String input) {
 
         int numberOfMatches = matchCount.CountMatch(input);
-       System.out.println(numberOfMatches+" this the number on input" +input);
         return new ResponseEntity<Integer>(numberOfMatches, HttpStatus.OK);
     }
 
