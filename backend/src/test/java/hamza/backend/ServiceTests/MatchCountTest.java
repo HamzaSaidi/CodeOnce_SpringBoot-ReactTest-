@@ -24,7 +24,6 @@ public class MatchCountTest {
 
         String input = "hjhge,ojfz;";
         int expected = 2;
-        System.out.println(matchCount.CountMatch(input)+" and the expected is "+expected);
         assertThat(matchCount.CountMatch(input), equalTo(expected));
     }
 
