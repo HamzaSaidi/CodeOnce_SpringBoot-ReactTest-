@@ -16,7 +16,6 @@ class InputComponent extends Component {
     handleSubmit = (e) => {
 
         e.preventDefault();
-        console.log(this.state.input + " this is the input")
         var item = {}
         let text = this.state.input
         this.toggle(text)
