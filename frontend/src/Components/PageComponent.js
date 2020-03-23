@@ -18,7 +18,6 @@ class PageComponent extends Component {
     addTextTolist = (item) => {
 
 
-        console.log(item.text + " the item sent from child function")
         let l = [...this.state.ListItems]
         //splice function to add at the begining
         l.splice(0, 0, item)
