@@ -34,7 +34,6 @@ public class ApiTest {
     public void should_return_NumberofMatches() throws Exception {
         //setup the mock
         Mockito.when(matchCount.CountMatch("hhvbdjj,ojz;")).thenReturn(2);
-        System.out.println("this is setup");
 
         ResultActions resultActions = mockMvc.perform(MockMvcRequestBuilders.post("/api/count")
                 .content("hhvbdjj,ojz;")
